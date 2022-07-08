@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}TODO List{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1 class="welcome">Hi, {{user.username}}</h1>
+        <div class="welcome"><a href="new_todo" class="new_todo">New TODO</a></div>
+        {% for i in todo %}
+            <div class="to-do">
+                <div class="todos">
+                    <label>{{i.to_do}}</label>
+                </div>
+                <div class="check_and_delete">
+                    <input type="checkbox">
+                    <a class="deletebtn" href="{% url 'delete' id=i.id %}">delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1 class="welcome">Welcome to the TODO List website</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}New TODO{% endblock %}
+
+{% block content %}
+    <div class="log_regist">
+        <form action="new_todo" method="post">
+            <input type="text" name="todo" placeholder="I need to do...">
+            <input type="submit" value="Add" class="submitbtn"><br>
+        </form>
+    </div>
+{% endblock %}

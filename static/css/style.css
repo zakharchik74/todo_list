@@ -1,0 +1,109 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    background: midnightblue;
+}
+.link {
+    padding: 10px;
+}
+.todo {
+    color:white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.welcome {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.link_about {
+    color:white;
+    margin-left: 930px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.links {
+    padding-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+.about{
+    font:20px
+}
+.log_regist {
+    padding:15px;
+    text-align: center;
+}
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  .submitbtn {
+    background-color: midnightblue;
+    color: white;
+    font-weight: bold;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+  }
+  .submitbtn:hover {
+    opacity: 1;
+  }
+
+.new_todo {
+    text-decoration: none;
+    border : solid black;
+    color:black;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+.new_todo:hover {
+    background-color:midnightblue;
+    color:white;
+    font-weight: bold;
+}
+.to-do {
+    vertical-align: middle;
+    border-radius: 10px;
+    padding: 10px;
+    padding-right:20px;
+    margin:8px;
+    background-color: #ddd;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+}
+input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    accent-color: midnightblue;
+}
+.deletebtn {
+    text-decoration: none;
+    border : 1px solid black;
+    color:black;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right:20px;
+}
+.deletebtn:hover{
+    background-color:midnightblue;
+    color:white;
+    font-weight: bold;
+}

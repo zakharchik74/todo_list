@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    display: flex;
+    background: midnightblue;
+    color: black;
+}
+.home {
+    width: 80%;
+    font-size: 24px;
+}
+.welcome {
+    text-align: center;
+}
+a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 20px;
+    border: none;
+    color: white;
+    
+}
+.about{
+    font:20px
+}

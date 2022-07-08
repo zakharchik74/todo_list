@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+    {% csrf_token %}
+    <div class="log_regist">
+        <form action="registration" method="post">
+            <label for="username"><b>Username</b></label><br>
+            <input type="text" name="username" placeholder="username"><br>
+            <label for="password"><b>Password</b></label><br>
+            <input type="password" name="password" placeholder="password"><br>
+            <label for="cpassword"><b>Confirm password</b></label><br>
+            <input type="password" name="cpassword" placeholder="confirm password"><br>
+            <input type="submit" value="Registration" class="submitbtn">
+        </form>
+        <p>Already have an account? <a href="login">Sign in</a>.</p>
+        {% for mess in messages %}
+            <h3>{{mess}}</h3>
+        {% endfor %}
+    </div>
+{% endblock %}
