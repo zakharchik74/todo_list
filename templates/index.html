@@ -6,13 +6,47 @@
     {% if user.is_authenticated %}
         <h1 class="welcome">Hi, {{user.username}}</h1>
         <div class="welcome"><a href="new_todo" class="new_todo">New TODO</a></div>
-        {% for i in todo %}
+        {% if todo is defined %}
+            <h2>TODOs</h2>
+        {% endif %}
+        <form action="" method="POST">
+            {% for i in todo %}
+                <div class="to-do">
+                    <div class="todos">
+                            <label>{{i.to_do}}</label>
+                        </div>
+                            <div class="check_and_delete">
+                                <label>In the process:</label>
+                                <input type="checkbox" name="process" value="{{i.id}}.{{i.to_do}}">
+                    </div>
+                </div>
+            {% endfor %}
+            <div class = "button_center"><input class="deletebtn" type="submit" value="Confirm"></div>
+        </form>
+
+        <h2>TODOs in the process</h2>
+        <form action="" method="POST">
+            {% for i in process %}
+                <div class="to-do">
+                    <div class="todos">
+                            <label>{{i.to_do}}</label>
+                        </div>
+                            <div class="check_and_delete">
+                                <label>Completed:</label>
+                                <input type="checkbox" name="completed" value="{{i.id}}.{{i.to_do}}">
+                    </div>
+                </div>
+            {% endfor %}
+            <div class = "button_center"><input class="deletebtn" type="submit" value="Confirm"></div>
+        </form>
+
+        <h2>Completed TODOs</h2>
+        {% for i in completed %}
             <div class="to-do">
                 <div class="todos">
-                    <label>{{i.to_do}}</label>
+                    <label class="text">{{i.to_do}}</label>
                 </div>
                 <div class="check_and_delete">
-                    <input type="checkbox">
                     <a class="deletebtn" href="{% url 'delete' id=i.id %}">delete</a>
                 </div>
             </div>
