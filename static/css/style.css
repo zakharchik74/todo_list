@@ -107,3 +107,9 @@ input[type=checkbox] {
     color:white;
     font-weight: bold;
 }
+h2 {
+    text-align: center;
+}
+.button_center {
+    text-align: center;
+}

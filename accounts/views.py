@@ -10,36 +10,38 @@ def reg(request):
         username = request.POST['username']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
+        
         if password == cpassword:
-            if User.objects.filter(username=username):
+            if User.objects.filter(username=username).exists():
                 messages.info(request, 'Username taken')
                 return redirect('registration')
             else:
-                user = User.objects.create_user(username=username, password=password)
+                user = User.objects.create_user(username = username, password = password)
                 user.save()
                 return redirect('login')
         else:
-            messages.info(request, 'Passwords not matching')
+            messages.info(request, 'Password not matching')
             return redirect('registration')
-        return redirect('/')
-    else:    
+
+    else:
         return render(request, 'registration.html')
 
 def login(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(username = username, password = password)
+
+        user = auth.authenticate(username=username, password=password)
 
         if user is not None:
             auth.login(request, user)
-            return redirect("/")
+            return redirect('index')
         else:
             messages.info(request, 'Invalid credentials')
-            return redirect('login')
+    
     else:
         return render(request, 'login.html')
 
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('index')

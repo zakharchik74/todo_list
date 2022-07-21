@@ -12,3 +12,19 @@ class ToDo(models.Model):
         blank=True,
         null=True,
     )
+class ToDo_process(models.Model):
+    to_do = models.TextField()
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+class ToDo_completed(models.Model):
+    to_do = models.TextField()
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
